@@ -6,7 +6,7 @@ description: The premier conversion software for Teradata to Snowflake.
 
 ![](.gitbook/assets/snowconvert-logo-3x.png)
 
-Conventional data platforms and big data solutions struggle to deliver on their fundamental purpose: to enable any user to work with any data, without limits on scale, performance or flexibility. Whether you’re a data analyst, data scientist, data engineer, or any other business or technology professional, you’ll get more from your data with the reinvented data warehousing that Snowflake can provide. Included in the many benefits of transitioning to world's leading cloud-based data platform are: 
+Conventional data platforms and big data solutions struggle to deliver on their fundamental purpose: to enable any user to work with any data, without limits on scale, performance or flexibility. Whether you’re a data analyst, data scientist, data engineer, or any other business or technology professional, you’ll get more from your data with the reinvented data warehousing that Snowflake can provide. Included in the many benefits of transitioning to world's leading cloud-based data platform are:
 
 * _Multi-cluster and shared data_: allows you to process enormous quantities of data with maximum speed and efficiency.
 * _Micro-Partitioning_: allows you to securely and efficiently store customer data.
@@ -17,7 +17,9 @@ Conventional data platforms and big data solutions struggle to deliver on their 
 
 _**Mobilize.Net SnowConvert**_ is an easy-to-use software that lets you jump-start the modernization of your conventional data platform to the reinvented Snowflake Data Warehousing Architecture. To achieve this modernization, _SnowConvert_ understands your conventional SQL \(i.e., Teradata SQL\) and translates it to [Snowflake SQL](https://docs.snowflake.net/manuals/sql-reference-commands.html). Once your conventional SQL gets converted, you'll be able to start enjoying all the benefits of Snowflake.
 
-{% embed url="https://mobilize.wistia.com/medias/doxnt7c1mn" %}
+{% embed url="https://mobilize.wistia.com/medias/doxnt7c1mn" caption="" %}
 
-This is an edit and an update. 
+This is an edit and an update.
+
+What if I make another update? Will it update?????
 

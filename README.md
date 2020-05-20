@@ -6,7 +6,7 @@ description: The premier conversion software for Teradata to Snowflake.
 
 ![](.gitbook/assets/snowconvert-logo-3x.png)
 
-Conventional data platforms and big data solutions struggle to deliver on their fundamental purpose: to enable any user to work with any data, without limits on scale, performance or flexibility. Whether you’re a data analyst, data scientist, data engineer, or any other business or technology professional, you’ll get more from your data with the reinvented data warehousing that Snowflake can provide. Included in the many benefits of transitioning to world's leading cloud-based data platform are:
+Conventional data platforms and big data solutions struggle to deliver on their fundamental purpose: to enable any user to work with any data, without limits on scale, performance or flexibility. Whether you’re a data analyst, data scientist, data engineer, or any other business or technology professional, you’ll get more from your data with the reinvented data warehousing that Snowflake can provide. Included in the many benefits of transitioning to world's leading cloud-based data platform are: 
 
 * _Multi-cluster and shared data_: allows you to process enormous quantities of data with maximum speed and efficiency.
 * _Micro-Partitioning_: allows you to securely and efficiently store customer data.

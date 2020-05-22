@@ -1,12 +1,14 @@
 ---
-description: Downloading and setting up SnowConvert
+description: >-
+  Downloading and setting up SnowConvert is as easy as using an easy bake
+  oven... and with a much lower of burning your office down.
 ---
 
-# Installation and License Information
+# Download, Install, and License Information
 
-## Install process
+## Download
 
-Getting up and running with Mobilize SnowConvert is quick and easy. It is a small download so you can install and convert your code in a matter of minutes. In the following steps we are going to explain you how to install and execute the tool.
+Getting up and running with Mobilize.Net SnowConvert is quick and easy. You can download SIt is a small download so you can install and convert your code in a matter of minutes. In the following steps we are going to explain you how to install and execute the tool.
 
 ### Download webpage link
 

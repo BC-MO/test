@@ -4,19 +4,17 @@ description: A Description of how this thing will change your life.
 
 # What is SnowConvert?
 
-SnowConvert is a software that understands [Teradata SQL](https://www.teradata.com/) and performs the following conversions:
+SnowConvert is a software that understands [Teradata SQL](https://www.teradata.com/) and converts it to:
 
 * Teradata SQL to [Snowflake SQL](https://www.snowflake.com/)
 * Teradata Stored Procedures to JavaScript
 * Teradata BTEQ to Python
 
-## Code Conversions
-
-### Teradata SQL to Snowflake SQL
+#### Teradata SQL to Snowflake SQL
 
 SnowConvert understands the source code and converts Teradata's Data Definition Language \(DDL\), Data Manipulation Language \(DML\) and functions to Snowflakes corresponding SQL, except the Procedures and BTEQ.
 
-#### **Example of Teradata SQL to Snowflake SQL**:
+**Example of Teradata SQL to Snowflake SQL**:
 
 Here's an example of the conversion of a simple CREATE TABLE statement 
 
@@ -77,11 +75,11 @@ In this converted sql you will notice that we are converting many things such as
 * Data Type Attributes: `NOT CASESPECIFIC` to `COLLATE`
 * Removing unnecessary parts like `NO BEFORE JOURNAL`, `NO AFTER JOURNAL`, `CHECKSUM`, `COMPRESS`, `CHECK`
 
-### Teradata Stored Procedures to JavaScript
+#### Teradata Stored Procedures to JavaScript
 
-SnowConvert understands the source code and converts the Teradata's _CREATE PROCEDURE_ and _REPLACE PROCEDURE_ Data Definition Language to Snowflake's _CREATE OR REPLACE PROCEDURE_ Definition SQL and its inner statements to JavaScript.
+SnowConverts undertands the source code and converts the Teradata's _CREATE PROCEDURE_ and _REPLACE PROCEDURE_ Data Definition Language to Snowflake's _CREATE OR REPLACE PROCEDURE_ Definition SQL and its inner statements to JavaScript.
 
-#### **Example of a Stored Procedure Conversion**:
+**Example of a Procedure**:
 
 _The source code:_
 
@@ -154,11 +152,9 @@ In this converted sql you will notice that we are converting many things such as
     }).execute();
   ```
 
-### BTEQ scripts converted to Python
+#### BTEQ scripts converted to Python
 
 All _BTEQ_ script files will be converted to Python script. And a helper is copied to the output folder.
-
-#### Example of a BTEQ conversion:
 
 _The source code:_
 

@@ -4,19 +4,31 @@ description: A Description of how this thing will change your life.
 
 # What is SnowConvert?
 
-SnowConvert is a software that understands [Teradata SQL](https://www.teradata.com/) and converts it to:
+SnowConvert is a software that understands [Teradata SQL](https://www.teradata.com/) and performs the following conversions:
 
 * Teradata SQL to [Snowflake SQL](https://www.snowflake.com/)
 * Teradata Stored Procedures to JavaScript
 * Teradata BTEQ to Python
 
-#### Teradata SQL to Snowflake SQL
+Before we get lost in the magic of these code conversions, here a few terms/definitions so you know what we mean when we start dropping them all over the documentation:
 
-SnowConvert understands the source code and converts Teradata's Data Definition Language \(DDL\), Data Manipulation Language \(DML\) and functions to Snowflakes corresponding SQL, except the Procedures and BTEQ.
+* _SQL \(Structured Query Language\):_ the standard language for storing, manipulating, and retrieving data in most modern database architectures.
+* _BTEQ \(Batch Teradata Query\):_ BTEQ was the first utility and query tool for Teradata.
+* _SnowConvert_: the software that converts securely and automatically your Teradata files to the Snowflake cloud data platform. 
+* _Conversion rule or transformation rule:_ rules that allow SnowConvert to convert from a portion of source code to the expected target code.  
+* _Parse:_ parse or parsing is an initial process done by SnowConvert to understand the source code, and build up an internal data structure to process the conversion rules. 
 
-**Example of Teradata SQL to Snowflake SQL**:
+Let's dive in to the code conversions that Mobilize.Net SnowConvert can perform. 
 
-Here's an example of the conversion of a simple CREATE TABLE statement 
+## Code Conversions
+
+### Teradata SQL to Snowflake SQL
+
+SnowConvert understands the Teradata source code and converts the Data Definition Language \(DDL\), Data Manipulation Language \(DML\) and functions in the source code to the corresponding SQL in the target: Snowflake. \([Procedures](https://bcarver.gitbook.io/snowconvert-documentation/snowconvert-for/~/settings/advanced#teradata-stored-procedures-to-javascript) and [BTEQ](https://bcarver.gitbook.io/snowconvert-documentation/snowconvert-for/~/settings/advanced#bteq-scripts-converted-to-python) are handled differently.\)
+
+#### **Example of Teradata SQL to Snowflake SQL**
+
+Here's an example of the conversion of a simple CREATE TABLE statement. 
 
 _The source code \(a simple CREATE TABLE\):_
 
@@ -66,20 +78,20 @@ AS
     SELECT MAX(COL1) FROM PUBLIC. TABLE1 ;
 ```
 
-In this converted sql you will notice that we are converting many things such as:
+In this converted SQL you will notice that we are converting many things such as:
 
-* Adding `PUBLIC` Schema by default for all the Table and view names if the user doesn't specify one.
+* Adding `PUBLIC` Schema by default for all the Table and view names if the user doesn't specify one \(see how to specify a Schema\).
 * `CREATE SET TABLE` to `CREATE TABLE`
 * `REPLACE VIEW` to `CREATE OR REPLACE VIEW`
 * Data Types: `BLOB` to `BINARY` and `INTERVAL` to `VARCHAR`
 * Data Type Attributes: `NOT CASESPECIFIC` to `COLLATE`
-* Removing unnecessary parts like `NO BEFORE JOURNAL`, `NO AFTER JOURNAL`, `CHECKSUM`, `COMPRESS`, `CHECK`
+* Removing pieces of the Teradata SQL that are not necessary in Snowflake due to Snowflake's architecture such as `NO BEFORE JOURNAL`, `NO AFTER JOURNAL`, `CHECKSUM`, `COMPRESS`, and `DEFAULT MERGEBLOCKRATIO`.
 
-#### Teradata Stored Procedures to JavaScript
+### Teradata Stored Procedures to JavaScript
 
-SnowConverts undertands the source code and converts the Teradata's _CREATE PROCEDURE_ and _REPLACE PROCEDURE_ Data Definition Language to Snowflake's _CREATE OR REPLACE PROCEDURE_ Definition SQL and its inner statements to JavaScript.
+SnowConvert takes Teradata stored procedures \(usually written in SQL\) and converts them to JavaScript embedded into Snowflake SQL. Teradata's CREATE PROCEDURE and REPLACE PROCEDURE language is replaced by Snowflake's CREATE OR REPLACE PROCEDURE language. JavaScript is called as a scripting language, and all of the inner statements are converted to JavaScript.
 
-**Example of a Procedure**:
+#### **Example of a Stored Procedure Conversion**
 
 _The source code:_
 
@@ -130,12 +142,12 @@ CREATE OR REPLACE PROCEDURE PUBLIC. Procedure1 ()
 $$;
 ```
 
-In this converted sql you will notice that we are converting many things such as:
+In this converted SQL, there are several conversions that take place:
 
 * `REPLACE PROCEDURE` to `CREATE OR REPLACE PROCEDURE`
-* Local Declaration statement like `DECLARE SQL_CMD` to `var SQL_CMD = '  '`
-* Assignment statement like `SET SQL_CMD = ''`  to `SQL_CMD = ''`
-* The combination of `DECLARE CURSOR WITH RETURN` with `PREPARE` will be converted to:
+* Local declaration statement `DECLARE SQL_CMD` to `var SQL_CMD = '  '`
+* Assignment statement `SET SQL_CMD = ''`  to `SQL_CMD = ''`
+* The combination of `DECLARE CURSOR WITH RETURN` with `PREPARE` are converted to:
 
   ```text
   var setname = SQL_CMD;
@@ -144,7 +156,7 @@ In this converted sql you will notice that we are converting many things such as
     tablelist.push(tablename);
   ```
 
-* Open statement like `OPEN RESULTSET` to:
+* The `OPEN` statement `OPEN RESULTSET` is converted to:
 
   ```text
   var RESULTSET = snowflake.createStatement({
@@ -152,11 +164,21 @@ In this converted sql you will notice that we are converting many things such as
     }).execute();
   ```
 
-#### BTEQ scripts converted to Python
+### BTEQ scripts converted to Python
 
-All _BTEQ_ script files will be converted to Python script. And a helper is copied to the output folder.
+Basic Teradata Query \(BTEQ\) is Teradata's proprietary scripting language. All BTEQ script files will be converted to Python scripts. A helper class will be created by SnowConvert and copied to the output folder to create the functional equivalence between the source and the target. BTEQ can be batch run from outside the Snowflake environment. Learn more about how [you can connect Python scripts directly to Snowflake](https://docs.snowflake.com/en/user-guide/python-connector.html). 
 
-_The source code:_
+BTEQ files are also the foundation for multiple other proprietary data types that Teradata has created:
+
+* Fastload
+* Multiload
+* TPUMP
+
+Each of these filetypes are extensions of BTEQ. SnowConvert converts each of these filetypes to Python. Here's an example of a BTEQ to Python conversion:
+
+#### Example of a BTEQ conversion
+
+_The BTEQ source code:_
 
 ```sql
 .LABEL CREATE_TMP_KS
@@ -193,35 +215,29 @@ finally:
    snowconvert_helpers.quit_application()
 ```
 
-In this converted sql you will notice that we are converting many things such as:
-
-* A new python code with the following template:
-
-  \`\`\`python import sys import snowconvert\_helpers con = None try: snowconvert\_helpers.configure\_log\(\) con = snowconvert\_helpers.log\_on\(sys.argv\[1\], sys.argv\[2\], sys.argv\[3\]\)
-
-  **Any BTEQ CODE will be located here**
-
-except Exception as e: print\(e\)
-
-finally: if con is not None: con.close\(\) snowconvert\_helpers.quit\_application\(\)
-
-\`\`\`
+In the converted output code in Python, note that the SQL statement and error handler are converted, but there are also setup and helper functions created to facilitate the code running in a Python connection to Snowflake. A few of the conversions are: 
 
 * Removed `.Label` statement
 * `CREATE TABLE` to a function call `snowconvert_helpers.execute_sql_statement('CREATE TABLE...')`
 * `.IF` statement to `if` in python
 
-### System requirements
+The procedural conversions include: 
 
-* Windows 10
-* .NET Runtime 4.6.2 or greater \(available by default starting from Windows 10 - 1607\)
-* 4GB of RAM \(recommended\)
+`REPLACE PROCEDURE` to `CREATE OR REPLACE PROCEDURE`
 
-### SnowConvert terminology
+* importing helper classes such as `sys` and `snowconvert_helpers`, which is created by SnowConvert 
+* Creating a connector variable `con = None`, and populating it in the `try` statement: `con = snowconvert_helpers.log_on(sys.argv[1], sys.argv[2], sys.argv[3])`.
+* Setting up a log: `snowconvert_helpers.configure_log()`.
+* All of the SnowConvert created Python files will end with the following `finally` syntax: 
 
-* SQL: is a standard language for storing, manipulating and retrieving data in databases.
-* BTEQ: Batch Teradata Query. BTEQ was the first utility and query tool for Teradata.
-* _SnowConvert_: a software that converts securely and automatically your Teradata files to the Snowflake cloud data warehouse. 
-* _Conversion rule or transformation rule_: statu that allow the SnowConvert to convert from a portion of source code to the expected code.  
-* _Parse_: parse or parsing is an initial process of SnowConvert where it tries to understand the source code, builds up an internal data structure to be able to process the conversion rules. 
+  ```python
+  finally:
+     if con is not None:
+        con.close()
+     snowconvert_helpers.quit_application()
+  ```
+
+* Local declaration statement `DECLARE SQL_CMD` to `var SQL_CMD = '  '`
+
+And that's it! Mobilize.Net SnowConvert takes the pain and frustration out of changing data platforms. Learn how to download and get access to SnowConvert on the next page.
 

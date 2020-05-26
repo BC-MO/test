@@ -14,6 +14,12 @@ Getting up and running with Mobilize.Net SnowConvert is quick and easy. You can 
 
 On that page you will find a form that you can fill out to request the tool. The tool is available in three modes: assessment mode, trial mode, and conversion mode. \(See [Licenses](https://bcarver.gitbook.io/snowconvert-documentation/untitled/~/settings/advanced#how-to-request-a-license) at the end of this page to learn more about the different modes.\) It is going to be valuable It is a small download so you can install and convert your code in a matter of minutes. In the following steps we are going to explain you how to install and execute the tool.
 
+### System Requirements
+
+* Windows 10
+* .NET Runtime 4.6.2 or greater \(available by default starting from Windows 10 - 1607\)
+* 4GB of RAM \(recommended\)
+
 ### Download Page Link
 
 On the following link you can find and download the Mobilize SnowConvert Tool [https://mobilize.net/SnowConvert](https://mobilize.net/SnowConvert)

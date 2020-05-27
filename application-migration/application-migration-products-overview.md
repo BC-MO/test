@@ -14,8 +14,6 @@ We've been doing this forever. Here are a few of the products that we offer:
 
 It's time to set the record straight. Let's get to it!
 
-Type and edit.
-
 
 
  

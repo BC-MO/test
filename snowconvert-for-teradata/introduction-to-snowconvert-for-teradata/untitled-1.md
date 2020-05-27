@@ -12,7 +12,7 @@ Getting up and running with Mobilize.Net SnowConvert is quick and easy. You can 
 
 On that page you will find a form that you can fill out to request the tool. 
 
-![Mobilize.Net SnowConvert Download Form](.gitbook/assets/form_download_page.png)
+![Mobilize.Net SnowConvert Download Form](../../.gitbook/assets/form_download_page.png)
 
 The tool is available in three modes: assessment mode, trial mode, and full conversion mode. \(See [Licenses](https://bcarver.gitbook.io/snowconvert-documentation/untitled/~/settings/advanced#how-to-request-a-license) at the end of this page to learn more about the different modes.\) To download in assessment mode, all you need to do is fill out the form. If you are going to download in trial or full conversion mode, you will need a partner code. You can reach out to [sales@mobilize.net](mailto:sales@mobilize.net) to get access to those licenses. 
 
@@ -30,7 +30,7 @@ The download is ~ 100MB, and setup takes place in a matter of minutes. Below are
 
 The installation for Mobilize.Net SnowConvert should only take a few minutes. If you've followed the instruction above, you should have downloaded an .exe file that Once you open the .exe file, the welcome screen will come up. 
 
-![](.gitbook/assets/license_agreement_screen.png)
+![](../../.gitbook/assets/license_agreement_screen.png)
 
 On the following link you can find and download the Mobilize SnowConvert Tool [https://mobilize.net/SnowConvert](https://mobilize.net/SnowConvert)
 

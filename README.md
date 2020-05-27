@@ -1,5 +1,5 @@
 ---
-description: The premier conversion software for Teradata to Snowflake.
+description: The premier conversion software for migrating from Teradata to Snowflake.
 ---
 
 # Introduction to SnowConvert

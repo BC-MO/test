@@ -1,10 +1,6 @@
----
-description: A Description of how this thing will change your life.
----
-
 # What is SnowConvert?
 
-SnowConvert is a software that understands [Teradata SQL](https://www.teradata.com/) and performs the following conversions:
+SnowConvert is a software that understands [Teradata SQL](https://www.teradata.com/) and performs the following conversions start writing things:
 
 * Teradata SQL to [Snowflake SQL](https://www.snowflake.com/)
 * Teradata Stored Procedures to JavaScript

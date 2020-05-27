@@ -12,11 +12,11 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 1.0.1
 
-### GUI
+#### GUI
 
 * Adding support for Multiload, FastLoad and Tpump extensions for SnowConvert.
 
-### Conversion Core 1.0.1
+#### Conversion Core 1.0.1
 
 #### **Added:**
 
@@ -48,12 +48,12 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 1.0.0
 
-### GUI
+#### GUI
 
 * Using Product Licensing API 3.0.0.
 * Update crash screen to allow users to send crash report information.
 
-### Conversion Core 1.0.0
+#### Conversion Core 1.0.0
 
 * Conversion rate for Macros now counts partial conversions.
 * Added support for ABORT statements conversion.
@@ -64,7 +64,7 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 0.5.8
 
-### Conversion Core 0.3.5
+#### Conversion Core 0.3.5
 
 * Added support for conversion of REPEAT and LOOP statements.
 * Added support for multiple DECLARE HANDLER in a Stored Procedure.
@@ -73,14 +73,14 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 0.5.6
 
-### GUI
+#### GUI
 
 * Check for updates menu option available.
 * Modals styles improvements.
 * Display execution mode when running in Assessment Mode in SnowConvert UI.
 * New Mobilize.Net SnowConvert logo.
 
-### Conversion Core 0.3.4
+#### Conversion Core 0.3.4
 
 * Fixed parsing and conversion errors in Stored Procedures.
 * Fixed an issue when reordering tables related to the syntax analysis.
@@ -95,7 +95,7 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 0.5.4
 
-### Conversion Core 0.3.0
+#### Conversion Core 0.3.0
 
 * Added support for TPUMP conversion to Python.
 * Added support for SQL conversion of JOIN INDEX to MATERIALIZED VIEW.
@@ -114,12 +114,12 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 0.5.1
 
-### GUI
+#### GUI
 
 * Added Settings button in the Start Conversion window.
 * Performance improvements and bugfixes.
 
-### Conversion Core 0.3.0
+#### Conversion Core 0.3.0
 
 * Support for FastLoad conversion.
 * Support for MultiLoad conversion.
@@ -132,12 +132,12 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 0.4.6
 
-### GUI
+#### GUI
 
 * \#244583: Improvements in network detection.
 * \#245246: Improvements in license validation.
 
-### Conversion Core 0.2.3
+#### Conversion Core 0.2.3
 
 * \#244662: DEL FROM statement converted to DELETE FROM.
 * \#244974: Support TRYCAST function.
@@ -154,12 +154,12 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 0.4.4
 
-### GUI
+#### GUI
 
 * \#242955: Update logo and icons \(App and Installer\).
 * \#229548: Restart Conversion. Configuration file added.
 
-### Conversion Core 0.2.1
+#### Conversion Core 0.2.1
 
 * \#242787: Parameter Type Translation to SP.
 * \#242568: Escaping Comments in Commented Code for Procedures. Different loc are now being counted when marked as partially.
@@ -173,13 +173,13 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 0.4.3
 
-### GUI
+#### GUI
 
 * \#240348: Initial splash and loading screen added. Async application start and performance improvements related with electron-cgi connection initialization.
 * \#240165: Special characters support bug solved.
 * \#237676: Fixed standarization of error name.
 
-### Conversion Core 0.2.0
+#### Conversion Core 0.2.0
 
 * \#242598: License Text update to current year.
 * \#242619: \[BTEQ\] Helpers is not being copied.
@@ -189,7 +189,7 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 0.4.0
 
-### GUI
+#### GUI
 
 * License modal added to show the license information to the user.
 * Notification added to warm the user if the output folder isn't empty.
@@ -198,7 +198,7 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 * Conversion Settings Prompt.
 * Adding support for auto update notifications mechanism.
 
-### Conversion Core 0.1.3
+#### Conversion Core 0.1.3
 
 * \#239790: BTEQ Parsing: If Statement.
 * \#239809: BTEQ Parsing: LOGON.
@@ -215,7 +215,7 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 0.3.0
 
-### GUI
+#### GUI
 
 * Fixed bug related with undetected license when a new version is installed.
 * Main menu implementation. \(Options development is in progress\)
@@ -226,7 +226,7 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 
 ## Release 0.2.0
 
-### GUI
+#### GUI
 
 * Fixed bug related with undetected license when a new version is installed.
 * Main menu implementation. \(Options development is in progress\)
@@ -235,7 +235,7 @@ And if you don't want to post, email us at [support@mobilize.net](mailto:support
 * Fixes in license validation process and infinite looping avoided during validation.
 * Fixes in labels.
 
-### Conversion Core 0.1.2
+#### Conversion Core 0.1.2
 
 * \#40568: Added List separator based on the region default delimiter.
 * \#237780: Fix of Warning message of Default Session.

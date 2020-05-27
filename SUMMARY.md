@@ -13,10 +13,10 @@
 
 * [Database Migration Products Overview](database-migration/database-migration.md)
 * [SnowConvert for Teradata](database-migration/introduction-to-snowconvert-for-teradata/README.md)
-  * [What is SnowConvert?](database-migration/introduction-to-snowconvert-for-teradata/snowconvert-for.md)
-  * [Download, Install, and License Information](database-migration/introduction-to-snowconvert-for-teradata/untitled-1.md)
-  * [Migrating from Teradata to Snowflake](database-migration/introduction-to-snowconvert-for-teradata/learning-center.md)
-  * [Issues and Troubleshooting](database-migration/introduction-to-snowconvert-for-teradata/issues-and-troubleshooting.md)
-  * [Release Notes](database-migration/introduction-to-snowconvert-for-teradata/release-notes.md)
+  * [What is SnowConvert?](database-migration/introduction-to-snowconvert-for-teradata/snowconvert-what.md)
+  * [Download, Install, and License Information](database-migration/introduction-to-snowconvert-for-teradata/snowconvert-install.md)
+  * [Migrating from Teradata to Snowflake](database-migration/introduction-to-snowconvert-for-teradata/snowconvert-detail-center.md)
+  * [Issues and Troubleshooting](database-migration/introduction-to-snowconvert-for-teradata/snowconvert-issues-and-troubleshooting.md)
+  * [Release Notes](database-migration/introduction-to-snowconvert-for-teradata/snowconvert-release-notes.md)
 * [SnowConvert for Oracle](database-migration/snowconvert-for-oracle.md)
 

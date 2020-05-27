@@ -8,15 +8,11 @@ description: >-
 
 We've been doing this forever. Here are a few of the products that we offer:
 
-* Visual Basic Upgrade Companion \(VBUC\)
-* WebMAP
-* Upgrade Companion for Silverlight \(UCS\)
-* Powerbuilder to .NET
-* ServiceMAP
+* [Visual Basic Upgrade Companion \(VBUC\)](visual-basic-upgrade-companion-vbuc.md)
+* [WebMAP](webmap.md)
+* [Silverlight Bridge](silverlight-bridge.md)
 
-It's time... to set the record straight!
-
-Let's get to it!
+It's time to set the record straight. Let's get to it!
 
  
 

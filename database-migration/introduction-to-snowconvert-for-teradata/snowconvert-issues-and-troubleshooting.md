@@ -68,6 +68,8 @@ How should you troubleshoot each error type? Troubleshooting is not an exact sci
 
 Conversion errors happen. For Mobilize.net SnowConvert, errors are put into the following categories:
 
+![](../../.gitbook/assets/severity_levels.png)
+
 Regardless of the error severity, step 1 in troubleshooting a conversion is always to check the source code, especially if you receive a large number of errors. Ensure that it compiles in Teradata first. Often times a misplaced quote or parenthesis could lead to an entire file not converting correctly.
 
 Beyond that, please review the severity levels and information below. It’s worth reiterating that if you have a conversion that did not succeed, please reach out! We would love to hear from you.

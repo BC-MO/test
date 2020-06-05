@@ -1,5 +1,5 @@
 ---
-description: Error Handling.. We're here to help.
+description: Error Handling... We're here to help.
 ---
 
 # Issues and Troubleshooting
